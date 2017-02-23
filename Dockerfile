@@ -10,5 +10,7 @@ RUN sudo apt-get install oracle-java8-installer -y
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 RUN curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
 RUN sudo apt-get update && sudo apt-get install bazel -y
+RUN bazel
+RUN sudo apt-get install git
 
 CMD ["bash"]
