@@ -9,7 +9,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | \
 RUN apt-get install oracle-java8-installer -y
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list
 RUN curl https://bazel.build/bazel-release.pub.gpg | apt-key add -
-RUN apt-get update && apt-get install libcurl3-dev bazel -y
+RUN apt-get update && apt-get install libcurl3-dev git bazel -y
 RUN git clone https://github.com/tensorflow/tensorflow.git /tensorflow
 
 CMD ["bash"]
